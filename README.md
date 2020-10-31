@@ -24,7 +24,7 @@ Install CKEditor plugins
   * Easiest
 
     With [Drush](https://www.drush.org/)
-    1. [Install Drupal Console](https://www.drush.org/install).
+    1. [Install Drush](https://www.drush.org/install).
     2. Enable [CKEditor media embed](https://www.drupal.org/project/ckeditor_media_embed) module.
     3. Run `drush ckeditor_media_embed:install`.
 
