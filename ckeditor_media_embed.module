@@ -63,7 +63,7 @@ function ckeditor_media_embed_help($route_name, RouteMatchInterface $route_match
       $output .= '<h3>' . t('Autoembed') . '</h3>';
       $output .= '<p>' . t('Depending on which option is selected "Media Embed" or "Semantic Media Embed" when a media URL is inserted in to the field it will automatically be replaced with the correct media embed automatically.') . '</p>';
       $output .= '<h3>' . t('Changing the CKEditor Version') . '</h3>';
-      $output .= '<p>' . t('By default, when running "drupal ckeditor_media_embed:install" to download the required plugins, the Drupal Core CKEditor version is parsed for and used. If you wish to use a different version of CKEditor, you can change the version by running either "drupal cdit" with DrupalConsole or "drush config-edit" with Drush, selecting ckeditor_media_embed.settings, and changing the ckeditor_version key to the version you would like to use. Be sure to run "drupal ckeditor_media_embed:install" again to actually download the new plugins.') . '</p>';
+      $output .= '<p>' . t('By default, when running "drush ckeditor_media_embed:install" to download the required plugins, the Drupal Core CKEditor version is parsed for and used. If you wish to use a different version of CKEditor, you can change the version by running "drush config-edit" with Drush, selecting ckeditor_media_embed.settings, and changing the ckeditor_version key to the version you would like to use. Be sure to run "drush ckeditor_media_embed:install" again to actually download the new plugins.') . '</p>';
       $output .= '</dl>';
       return $output;
   }
@@ -120,10 +120,10 @@ function _ckeditor_media_embed_get_install_instructions($prefix = TRUE, $update 
     $message_prefix = t('The required CKEditor plugs are missing.');
   }
 
-  return Markup::Create(t('@prefix To :op the CKEditor plugins run <strong><code>drupal ckeditor_media_embed::op</code></strong> if you have <a href=":drupal_console" target="_blank">Drupal Console</a> installed. Otherwise, please see the <a href=":project_page" target="_blank">installation instructions</a> on the page for additional :op methods.',
+  return Markup::Create(t('@prefix To :op the CKEditor plugins run <strong><code>drush ckeditor_media_embed::op</code></strong> if you have <a href=":drush" target="_blank">Drush</a> installed. Otherwise, please see the <a href=":project_page" target="_blank">installation instructions</a> on the page for additional :op methods.',
     [
       ':op' => $update ? 'update' : 'install',
-      ':drupal_console' => Url::fromUri('https://drupalconsole.com/', ['absolute' => TRUE])->toString(),
+      ':drush' => Url::fromUri('https://drush.org/', ['absolute' => TRUE])->toString(),
       ':project_page' => Url::fromUri('https://www.drupal.org/project/ckeditor_media_embed', ['absolute' => TRUE, 'fragment' => 'ckeditor-media-embed--install'])->toString(),
       '@prefix' => $message_prefix,
     ]

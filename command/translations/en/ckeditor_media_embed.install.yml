@@ -3,5 +3,5 @@ messages:
   comment-downloading-package: 'Downloading CKEditor package version %s...'
   success-downloading-package: 'Successfully downloaded CKEditor package version %s.'
   success-installed-plugin: 'Successfully installed CKEditor %s plugin.'
-  question-overwrite-files: 'This operation will overwrite plugins in "%s". Are you sure? [y/n]'
+  question-overwrite-files: 'This operation will overwrite plugins in "%s". Are you sure?'
   option-description-overwrite-files: 'Overwrite existing plugin files.'

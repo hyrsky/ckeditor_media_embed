@@ -67,12 +67,10 @@ class InstallCommand implements CKEditorCliCommandInterface {
    * @return $this
    */
   protected function setMessages() {
-    $messages_file = \Drupal::service('module_handler')->getModule('ckeditor_media_embed')->getPath() . '/console/translations/en/ckeditor_media_embed.install.yml';
+    $messages_file = \Drupal::service('module_handler')->getModule('ckeditor_media_embed')->getPath() . '/command/translations/en/ckeditor_media_embed.install.yml';
     $messages = Yaml::decode(file_get_contents($messages_file))['messages'];
 
-    $this->messages = array_map(function ($message) {
-      return dt($message);
-    }, $messages);
+    $this->messages = array_map('dt', $messages);
 
     return $this;
   }

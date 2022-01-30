@@ -28,13 +28,6 @@ Install CKEditor plugins
     2. Enable [CKEditor media embed](https://www.drupal.org/project/ckeditor_media_embed) module.
     3. Run `drush ckeditor_media_embed:install`.
 
-    OR
-
-    With [Drupal Console](https://github.com/hechoendrupal/DrupalConsole)
-    1. [Install Drupal Console](https://github.com/hechoendrupal/DrupalConsole#installing-drupal-console).
-    2. Enable [CKEditor media embed](https://www.drupal.org/project/ckeditor_media_embed) module.
-    3. Run `drupal ckeditor_media_embed:install`.
-
   * Harder
 
     1. Download the [Full "dev" package for CKEditor](https://github.com/ckeditor/ckeditor-dev/archive/latest. zip).
