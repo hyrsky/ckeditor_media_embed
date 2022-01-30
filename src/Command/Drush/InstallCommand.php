@@ -17,7 +17,7 @@ class InstallCommand implements CKEditorCliCommandInterface {
   /**
    * The CKEditor Media Embed CLI Commands service.
    *
-   * @var \Drupal\ckeditor_media_embed\CLICommands
+   * @var \Drupal\ckeditor_media_embed\Command\CliCommandWrapper
    */
   protected $cliCommands;
 
@@ -27,6 +27,27 @@ class InstallCommand implements CKEditorCliCommandInterface {
    * @var string[]
    */
   protected $messages;
+
+  /**
+   * The console input service.
+   *
+   * @var \Symfony\Component\Console\Input\InputInterface
+   */
+  protected $input;
+
+  /**
+   * The output service.
+   *
+   * @var \Symfony\Component\Console\Output\OutputInterface
+   */
+  protected $output;
+
+  /**
+   * The input/output service provided by Drush.
+   *
+   * @var \Drush\Style\DrushStyle
+   */
+  protected $io;
 
   /**
    * Constructs command object.

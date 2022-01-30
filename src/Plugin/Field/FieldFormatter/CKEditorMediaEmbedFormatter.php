@@ -26,7 +26,7 @@ class CKEditorMediaEmbedFormatter extends FormatterBase implements ContainerFact
   /**
    * The embed service.
    *
-   * @var \Drupal\ckeditor_media_embed\EmbedInterfacee
+   * @var \Drupal\ckeditor_media_embed\EmbedInterface
    */
   protected $embed;
 

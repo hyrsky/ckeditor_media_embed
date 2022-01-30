@@ -89,7 +89,7 @@ namespace Drupal\Tests\ckeditor_media_embed\Unit {
     public function testGetCKEditorVersion() {
       $library_discovery = $this->getMockBuilder('Drupal\Core\Asset\LibraryDiscovery')
         ->disableOriginalConstructor()
-        ->setMethods(['getLibraryByName'])
+        ->onlyMethods(['getLibraryByName'])
         ->getMock();
 
       $config_empty = $this->getMockBuilder('\Drupal\Core\Config\ImmutableConfig')
@@ -179,7 +179,7 @@ namespace Drupal\Tests\ckeditor_media_embed\Unit {
       // Retrieve the version from the CKEditor plugins.
       $library_discovery = $this->getMockBuilder('Drupal\Core\Asset\LibraryDiscovery')
         ->disableOriginalConstructor()
-        ->setMethods(['getLibraryByName'])
+        ->onlyMethods(['getLibraryByName'])
         ->getMock();
       $config_set = $this->getMockBuilder('\Drupal\Core\Config\ImmutableConfig')
         ->disableOriginalConstructor()

@@ -24,7 +24,7 @@ class FilterCKEditorMediaEmbed extends FilterBase implements ContainerFactoryPlu
   /**
    * The Embed object used to convert <oembed> tags to embed html.
    *
-   * @var Drupal\ckeditor_media_embed\Embed
+   * @var \Drupal\ckeditor_media_embed\EmbedInterface
    */
   protected $ckeditorMediaEmbed;
 

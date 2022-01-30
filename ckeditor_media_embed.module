@@ -139,13 +139,13 @@ function ckeditor_media_embed_ckeditor_media_embed_object_alter(&$embed) {
     && $title = Html::escape($embed->title)
   );
 
-  if ($title_exists && $document = Html::load(trim($embed->html))) {
-    if ($iframes = $document->getElementsByTagName('iframe')) {
-      foreach ($iframes as $iframe) {
-        $iframe->setAttribute('title', $title);
-      }
-
-      $embed->html = Html::serialize($document);
+  if ($title_exists && !empty($embed->html)) {
+    $document = Html::load(trim($embed->html));
+    $iframes = $document->getElementsByTagName('iframe');
+    foreach ($iframes as $iframe) {
+      $iframe->setAttribute('title', $title);
     }
+
+    $embed->html = Html::serialize($document);
   }
 }

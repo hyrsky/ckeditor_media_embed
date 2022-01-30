@@ -74,6 +74,13 @@ class Embed implements EmbedInterface {
   protected $moduleHandler;
 
   /**
+   * The URL of the embed provider.
+   *
+   * @var string
+   */
+  protected $embedProvider;
+
+  /**
    * Constructs an Embed object.
    *
    * @param \GuzzleHttp\ClientInterface $http_client
@@ -115,7 +122,7 @@ class Embed implements EmbedInterface {
     });
 
     $provider_parsed['absolute'] = TRUE;
-    $this->embed_provider = $this->urlAssembler->assemble($provider_parsed['path'], $provider_parsed);
+    $this->embedProvider = $this->urlAssembler->assemble($provider_parsed['path'], $provider_parsed);
   }
 
   /**
@@ -146,7 +153,7 @@ class Embed implements EmbedInterface {
    */
   // @codingStandardsIgnoreLine
   protected function getEmbedProviderURL($url) {
-    $provider = $this->embed_provider;
+    $provider = $this->embedProvider;
 
     if (strpos($provider, '//') === 0) {
       $provider = $this->requestStack->getCurrentRequest()->getScheme() . ':' . $provider;
@@ -165,7 +172,7 @@ class Embed implements EmbedInterface {
     foreach ($xpath->query('//oembed') as $node) {
       $embed = $this->getEmbedObject($node->nodeValue);
 
-      if (!empty($embed) && !empty($embed->html)) {
+      if (!empty($embed->html)) {
         $this->swapEmbedHtml($node, $embed);
       }
     }
@@ -198,9 +205,8 @@ class Embed implements EmbedInterface {
     $child = NULL;
     $embed_body_node = Html::load(trim($embed->html))->getElementsByTagName('body')->item(0);
     foreach ($embed_body_node->childNodes as $child) {
-      if ($child = $node->ownerDocument->importNode($child, TRUE)) {
-        $embed_node->appendChild($child);
-      }
+      $child = $node->ownerDocument->importNode($child, TRUE);
+      $embed_node->appendChild($child);
     }
 
     $node->parentNode->replaceChild($embed_node, $node);

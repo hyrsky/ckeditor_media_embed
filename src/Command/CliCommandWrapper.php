@@ -93,7 +93,7 @@ class CliCommandWrapper  {
   /**
    * Present question to user about overwriting the plugin files.
    *
-   * @param $command
+   * @param CKEditorCliCommandInterface $command
    *   A command object (e.g., a Drush or Drupal Console command).
    *
    * @return bool
@@ -119,9 +119,9 @@ class CliCommandWrapper  {
   /**
    * Overwrite the plugin files.
    *
-   * @param $command
+   * @param CKEditorCliCommandInterface $command
    *   A command object (e.g., a Drush or Drupal Console command).
-   * @param $overwrite
+   * @param bool $overwrite
    *   User's response regarding overwriting plugin files.
    */
   public function overwritePluginFiles(CKEditorCliCommandInterface $command, $overwrite) {
@@ -138,7 +138,7 @@ class CliCommandWrapper  {
   /**
    * Download the full source package of CKEditor and extract it.
    *
-   * @param $command
+   * @param CKEditorCliCommandInterface $command
    *   A command object (e.g., a Drush or Drupal Console command).
    *
    * @return string
@@ -175,13 +175,13 @@ class CliCommandWrapper  {
   /**
    * Install an individual CKEditor plugin.
    *
-   * @param $command
+   * @param CKEditorCliCommandInterface $command
    *   A command object (e.g., a Drush or Drupal Console command).
    * @param string $package_directory
    *   The full path to the downloaded CKEditor full development package.
    * @param string $plugin_name
    *   The machine name of the CKEditor plugin to install.
-   * @param $overwrite
+   * @param bool $overwrite
    *   User's response regarding overwriting plugin files.
    *
    * @return $this

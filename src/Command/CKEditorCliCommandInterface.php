@@ -34,7 +34,7 @@ interface CKEditorCliCommandInterface {
    *
    * @param string $question
    *   The confirmation question.
-   * @param $default
+   * @param bool $default
    *   The default value to return if user doesn’t enter any valid input.
    *
    * @return mixed

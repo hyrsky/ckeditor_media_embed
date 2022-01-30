@@ -2,6 +2,8 @@
 
 namespace Drupal\ckeditor_media_embed;
 
+use Drupal\Component\Serialization\Exception\InvalidDataTypeException;
+use Drupal\Core\Asset\Exception\InvalidLibraryFileException;
 use Drupal\Core\Asset\LibraryDiscoveryInterface;
 use Drupal\Core\Serialization\Yaml;
 use Drupal\Core\Config\ConfigFactory;
@@ -113,7 +115,7 @@ class AssetManager {
    * @param \Drupal\Core\Asset\LibraryDiscoveryInterface $library_discovery
    *   The library discovery service to use for retrieving information about
    *   the CKeditor library.
-   * @param \Drupal\Core\Config\ConfigFactory
+   * @param \Drupal\Core\Config\ConfigFactory $config_factory
    *   The config factory service to use for retrieving configuration
    *   information about CKeditor Media Embed.
    * @param string $path

@@ -15,23 +15,23 @@ class CKEditorMediaEmbedCommands extends DrushCommands {
   /**
    * The CKEditor plugin installation command.
    *
-   * @var \Drupal\ckeditor_media_embed\Commands\InstallCommand
+   * @var \Drupal\ckeditor_media_embed\Command\Drush\InstallCommand
    */
   protected $installCommand;
 
   /**
    * The CKEditor plugin update command.
    *
-   * @var \Drupal\ckeditor_media_embed\Commands\UpdateCommand
+   * @var \Drupal\ckeditor_media_embed\Command\Drush\UpdateCommand
    */
   protected $updateCommand;
 
   /**
    * Constructs CKEditor Media Embed Drush Command object.
    *
-   * @param \Drupal\ckeditor_media_embed\Commands\InstallCommand $installCommand
+   * @param \Drupal\ckeditor_media_embed\Command\Drush\InstallCommand $installCommand
    *   The CKEditor plugin installation command.
-   * @param \Drupal\ckeditor_media_embed\Commands\UpdateCommand $updateCommand
+   * @param \Drupal\ckeditor_media_embed\Command\Drush\UpdateCommand $updateCommand
    *   The CKEditor plugin update command.
    */
   public function __construct(InstallCommand $installCommand, UpdateCommand $updateCommand) {
