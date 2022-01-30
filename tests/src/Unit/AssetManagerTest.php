@@ -16,9 +16,9 @@ namespace Drupal\Tests\ckeditor_media_embed\Unit {
     /**
      * {@inheritdoc}
      */
-    public function setUp() {
+    public function setUp(): void {
       $container = new ContainerBuilder();
-      $container->set('app.root', __DIR__ . '/../../assets');
+      $container->setParameter('app.root', __DIR__ . '/../../assets');
       \Drupal::setContainer($container);
     }
 
@@ -28,7 +28,7 @@ namespace Drupal\Tests\ckeditor_media_embed\Unit {
     public function testGetPlugins() {
       $plugins = AssetManager::getPlugins();
       $this->assertIsArray($plugins);
-      $this->assertCount(7, $plugins, 'There should be 7 plugins.');
+      $this->assertCount(9, $plugins, 'There should be 7 plugins.');
     }
 
     /**
@@ -36,7 +36,7 @@ namespace Drupal\Tests\ckeditor_media_embed\Unit {
      */
     public function testGetPluginsAbove411() {
       $plugins = AssetManager::getPlugins('4.11');
-      $this->assertCount(8, $plugins, 'There should be 8 plugins.');
+      $this->assertCount(10, $plugins, 'There should be 8 plugins.');
     }
 
     /**
@@ -109,7 +109,7 @@ namespace Drupal\Tests\ckeditor_media_embed\Unit {
         ->willReturn($config_empty);
 
       $container = new ContainerBuilder();
-      $container->set('app.root', __DIR__ . '/../../assets');
+      $container->setParameter('app.root', __DIR__ . '/../../assets');
       $container->set('config.factory', $config_factory);
       \Drupal::setContainer($container);
 
