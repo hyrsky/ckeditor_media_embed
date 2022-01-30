@@ -54,6 +54,8 @@ Install CKEditor plugins
       * [Notification](http://ckeditor.com/addon/notification)
       * [Notification Aggregator](http://ckeditor.com/addon/notificationaggregator)
       * [Text Match](https://ckeditor.com/cke4/addon/textmatch) (As of CKEditor 4.11)
+      * [Link](http://ckeditor.com/addon/link)
+      * [Fake Objects](https://ckeditor.com/cke4/addon/fakeobjects)
 
     2. Unzip and place the contents for each plugin in the the following
        directory:
