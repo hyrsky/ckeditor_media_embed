@@ -14,7 +14,7 @@ use Symfony\Component\Filesystem\Filesystem;
 /**
  * Class CLICommands.
  */
-class CliCommandWrapper  {
+class CliCommandWrapper {
 
   /**
    * The CKEditor plugin manager service.
@@ -57,6 +57,12 @@ class CliCommandWrapper  {
    * @var string
    */
   protected $packageVersion;
+
+  /**
+   * The module handler.
+   *
+   * @var \Drupal\Core\Extension\ModuleHandlerInterface
+   */
 
   /**
    * Constructs CLI commands object.

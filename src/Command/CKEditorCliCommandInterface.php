@@ -2,12 +2,16 @@
 
 namespace Drupal\ckeditor_media_embed\Command;
 
+/**
+ * Defines an interface for our CKEditor cli.
+ */
 interface CKEditorCliCommandInterface {
 
   /**
    * Retrieve the command input service.
    *
    * @return \Symfony\Component\Console\Input\InputInterface
+   *   The input service.
    */
   public function getInput();
 
@@ -15,6 +19,7 @@ interface CKEditorCliCommandInterface {
    * Retrieve the i/o style.
    *
    * @return \Symfony\Component\Console\Style\StyleInterface
+   *   The i/o style.
    */
   public function getIo();
 

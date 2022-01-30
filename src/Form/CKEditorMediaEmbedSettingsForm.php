@@ -14,7 +14,7 @@ use Drupal\Core\Routing\UrlGeneratorInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
- * Class CKEditorMediaEmbedSettingsForm.
+ * The CKEditor media embed settings form.
  *
  * @package Drupal\ckeditor_media_embed\Form
  */

@@ -3,6 +3,6 @@
 namespace Drupal\ckeditor_media_embed\Command\Drush;
 
 /**
- * Class UpdateCommand.
+ * The update command.
  */
 class UpdateCommand extends InstallCommand {}

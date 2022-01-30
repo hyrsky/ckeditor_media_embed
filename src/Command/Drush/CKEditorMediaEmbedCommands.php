@@ -3,9 +3,6 @@
 namespace Drupal\ckeditor_media_embed\Command\Drush;
 
 use Drush\Commands\DrushCommands;
-use Symfony\Component\Console\Style\SymfonyStyle;
-use Symfony\Component\Console\Input\InputInterface;
-use Symfony\Component\Console\Output\OutputInterface;
 
 /**
  * CKEditor Media Embed Drush command file.
