@@ -12,57 +12,13 @@ CONTENTS OF THIS FILE
 INTRODUCTION
 ------------
 
-A module that adds support for CKEditor plugins Media Embed,
-Semantic Media Embed, and Auto Embed to Drupal core's CKEditor.
-
-
-REQUIREMENTS
-------------
-
-Install CKEditor plugins
-
-  * Easiest
-
-    With [Drush](https://www.drush.org/)
-    1. [Install Drush](https://www.drush.org/install).
-    2. Enable [CKEditor media embed](https://www.drupal.org/project/ckeditor_media_embed) module.
-    3. Run `drush ckeditor_media_embed:install`.
-
-  * Harder
-
-    1. Download the [Full "dev" package for CKEditor](https://github.com/ckeditor/ckeditor-dev/archive/latest. zip).
-    2. Unzip the package and place its contents into
-      `DRUPAL_ROOT/libraries/ckeditor`.
-    3. Clear the cache
-
-  * Hardest
-
-    1. Download the following plugins:
-
-      * [Media Embed](http://ckeditor.com/addon/embed)
-      * [Media Semantic Embed](http://ckeditor.com/addon/embedsemantic)
-      * [Media Embed Base](http://ckeditor.com/addon/embedbase)
-      * [Auto Embed](http://ckeditor.com/addon/autoembed)
-      * [Auto Link](http://ckeditor.com/addon/autolink)
-      * [Notification](http://ckeditor.com/addon/notification)
-      * [Notification Aggregator](http://ckeditor.com/addon/notificationaggregator)
-      * [Text Match](https://ckeditor.com/cke4/addon/textmatch) (As of CKEditor 4.11)
-      * [Link](http://ckeditor.com/addon/link)
-      * [Fake Objects](https://ckeditor.com/cke4/addon/fakeobjects)
-
-    2. Unzip and place the contents for each plugin in the the following
-       directory:
-
-      * `DRUPAL_ROOT/libraries/ckeditor/plugins/PLUGIN_NAME`
-
-    3. Clear the cache
+A module that adds support for CKEditor 5 plugin [Media Embed](https://ckeditor.com/docs/ckeditor5/latest/features/media-embed.html).
 
 
 INSTALLATION
 ------------
 
 Install the module per normal https://www.drupal.org/documentation/install/modules-themes/modules-8
-then follow the instructions for installing the CKEditor plugins below.
 
 
 CONFIGURATION
@@ -75,22 +31,12 @@ Install and enable [CKEditor media embed](https://www.drupal.org/project/ckedito
     - Go to the 'Text formats and editors' configuration page:
       `/admin/config/content/formats`, and for each text format/editor combo
       where you want to embed URLs, do the following:
-    - Drag and drop the 'Media Embed' or the 'Semantic Media Embed' button into
-      the Active toolbar.
-    - If the text format uses the
-      'Limit allowed HTML tags and correct faulty HTML' filter, use the
-      'Semantic Media Embed' and read the instructions for the
-      'Semantic Media Embed' below.
-
-  * Semantic Media Embed
-
-    If you are using the 'Semantic Media Embed' button be sure to do the
-    following:
+    - Drag and drop the 'Media Embed' button into the Active toolbar.
     - Enable the 'Convert Oembed tags to media embeds' filter.
-    - If the text format uses the 'Limit allowed HTML tags and correct faulty
-      HTML' filter, add ```<oembed>``` to the 'Allowed HTML tags' field.
-      (This should happen automatically however, in some cases it does not.
-      See https://www.drupal.org/node/2689083.)
+    - If the text format uses the
+      'Limit allowed HTML tags and correct faulty HTML' filter, then
+      'Convert Oembed tags to media embeds' filter must be placed after
+      the 'Limit allowed HTML tags and correct faulty HTML' filter.
 
   * Field formatter
 
@@ -103,24 +49,9 @@ Install and enable [CKEditor media embed](https://www.drupal.org/project/ckedito
       the link field you wish.
 
 
-ADDITIONAL PLUGINS
-------------------
-
-This module also includes all additional non-core dependencies for the Media
-Embed CKEditor plugin.
-
-  * [Media Embed](http://ckeditor.com/addon/embed)
-  * [Media Semantic Embed](http://ckeditor.com/addon/embedsemantic)
-  * [Media Embed Base](http://ckeditor.com/addon/embedbase)
-  * [Auto Embed](http://ckeditor.com/addon/autoembed)
-  * [Auto Link](http://ckeditor.com/addon/autolink)
-  * [Notification](http://ckeditor.com/addon/notification)
-  * [Notification Aggregator](http://ckeditor.com/addon/notificationaggregator)
-  * [Text Match](https://ckeditor.com/cke4/addon/textmatch)
-
-
 MAINTAINERS
 -----------
 
 Current maintainers:
+  * Santeri Hurnanen (oikeuttaelaimille) - https://www.drupal.org/u/oikeuttaelaimille
   * Jonathan DeLaigle (grndlvl) - https://www.drupal.org/u/grndlvl

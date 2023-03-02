@@ -13,11 +13,11 @@ use Drupal\Core\Render\Markup;
  * Implements hook_install().
  */
 function ckeditor_media_embed_install() {
-  $version = AssetManager::getCKEditorVersion(\Drupal::service('library.discovery'), \Drupal::service('config.factory'));
+  //$version = AssetManager::getCKEditorVersion(\Drupal::service('library.discovery'), \Drupal::service('config.factory'));
 
-  if (!AssetManager::pluginsAreInstalled($version)) {
-    \Drupal::messenger()->addWarning(_ckeditor_media_embed_get_install_instructions());
-  }
+  //if (!AssetManager::pluginsAreInstalled($version)) {
+  //  \Drupal::messenger()->addWarning(_ckeditor_media_embed_get_install_instructions());
+  //}
 }
 
 /**
@@ -26,7 +26,7 @@ function ckeditor_media_embed_install() {
 function ckeditor_media_embed_requirements($phase) {
   $requirements = [];
 
-  if ($phase === 'runtime') {
+  if ($phase === 'runtime' && false) {
     $library_discovery = \Drupal::service('library.discovery');
     $config_factory = \Drupal::service('config.factory');
 

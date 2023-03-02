@@ -1,0 +1,21 @@
+{
+    "name": "drupal-ckeditor5-media-embed",
+    "version": "1.0.0",
+    "description": "Drupal CKEditor 5 media embed",
+    "author": "",
+    "license": "GPL-2.0+",
+    "scripts": {
+        "watch": "webpack --mode development --watch",
+        "build": "webpack"
+    },
+    "devDependencies": {
+        "css-loader": "^6.7.3",
+        "mini-css-extract-plugin": "^2.7.2",
+        "terser-webpack-plugin": "^5.3.6",
+        "webpack": "^5.51.1",
+        "webpack-cli": "^5.0.1"
+    },
+    "dependencies": {
+        "@ckeditor/ckeditor5-media-embed": "^36.0.1"
+    }
+}

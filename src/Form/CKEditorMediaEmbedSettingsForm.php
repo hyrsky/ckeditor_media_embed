@@ -94,11 +94,11 @@ class CKEditorMediaEmbedSettingsForm extends ConfigFormBase {
   public function buildForm(array $form, FormStateInterface $form_state) {
     $config = $this->config('ckeditor_media_embed.settings');
 
-    $version = AssetManager::getCKEditorVersion($this->libraryDiscovery, $this->configFactory);
-    if (!AssetManager::pluginsAreInstalled($version)) {
-      $this->messenger()->addWarning(_ckeditor_media_embed_get_install_instructions());
-      return [];
-    }
+    #$version = AssetManager::getCKEditorVersion($this->libraryDiscovery, $this->configFactory);
+    #if (!AssetManager::pluginsAreInstalled($version)) {
+    #  $this->messenger()->addWarning(_ckeditor_media_embed_get_install_instructions());
+    #  return [];
+    #}
 
     $form['embed_provider'] = [
       '#type' => 'textfield',

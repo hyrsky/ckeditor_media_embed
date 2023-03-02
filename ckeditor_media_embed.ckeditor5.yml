@@ -1,0 +1,39 @@
+ckeditor_media_embed_embed_media:
+  # Use the provider: property for this plugin to depend on another module.
+
+  # Configuration that will be sent to CKEditor 5 JavaScript plugins.
+  ckeditor5:
+    plugins:
+      - media-embed.MediaEmbed
+    # *Additional configuration properties*
+    # config: data sent to the constructor of any CKEditor 5 plugin
+    #   editorPluginName:
+    #     editorPluginProperty: editorPluginValue
+
+  # Configuration that will be used directly by Drupal.
+  drupal:
+    label: Media embed
+    # The library loaded while using the editor.
+    library: ckeditor_media_embed/media_embed
+    # The library loaded when configuring the text format using this plugin.
+    admin_library: ckeditor_media_embed/media_embed.admin
+    toolbar_items:
+      # This should match the name of the corresponding plugin exported in the
+      # plugin's index.js.
+      MediaEmbed:
+        label: Insert media
+    # If the plugin does not provide elements, set this as
+    # `elements: false`
+    elements:
+      - <figure>
+      - <figure class>
+      - <oembed>
+      - <oembed url>
+      # Note that it necessary for elements to separately provide both the tag
+      # (f.e. `<h2>`) and the attribute being added to the tag
+      # (f.e. `<h2 class="simple-box-title">`).
+    # *Additional configuration properties*
+    # conditions: for setting additional criteria that must be met for the
+    #   plugin to be active.
+    # class: Optional PHP class that makes it possible for the plugin to provide
+    #   dynamic values, or a configuration UI.

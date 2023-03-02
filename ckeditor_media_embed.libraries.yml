@@ -1,0 +1,10 @@
+media_embed:
+  js:
+    js/build/media-embed.js: { preprocess: false, minified: true }
+  dependencies:
+    - ckeditor5/ckeditor5
+
+media_embed.admin:
+  css:
+    theme:
+      css/build/media_embed.admin.css: {}

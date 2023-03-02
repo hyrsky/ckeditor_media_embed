@@ -170,7 +170,7 @@ class Embed implements EmbedInterface {
     $xpath = new \DOMXPath($document);
 
     foreach ($xpath->query('//oembed') as $node) {
-      $embed = $this->getEmbedObject($node->nodeValue);
+      $embed = $this->getEmbedObject($node->getAttribute('url'));
 
       if (!empty($embed->html)) {
         $this->swapEmbedHtml($node, $embed);
